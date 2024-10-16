@@ -43,7 +43,7 @@ if (isset($_GET['controller']) && isset($_GET['action']) && isset($_GET['buttonI
                     </a>
                 </li>
                 <li id="room">
-                    <a href="#">
+                    <a href="?controller=room&action=index&buttonId=room">
                         <i class="fa-solid fa-bed"></i>
                         <span>Room</span>
                     </a>
@@ -69,6 +69,7 @@ if (isset($_GET['controller']) && isset($_GET['action']) && isset($_GET['buttonI
             </ul>
         </div>
     </div>
+    
     <?php require("route.php"); ?>
 
     <script>

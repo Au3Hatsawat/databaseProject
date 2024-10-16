@@ -1,8 +1,8 @@
 <?php
     $servername = "db";
     $username = "root";
-    $password = "MYSQL_ROOT_PASSWORD";
-    $dbname = "project";
+    $password = "";
+    $dbname = "hotel_crud";
     $conn = new mysqli($servername,$username,$password);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

@@ -54,3 +54,25 @@ tfoot td {
     cursor: pointer;
 }
 
+div.pager {
+    text-align: center;
+    margin: 1em 0;
+}
+
+div.pager span {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8;
+    text-align: center;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 15px;
+    border: 2px solid #ffffffa1;
+    color: #333;
+    margin-right: 0.5em;
+}
+
+div.pager span.active {
+    background: cornflowerblue;
+}

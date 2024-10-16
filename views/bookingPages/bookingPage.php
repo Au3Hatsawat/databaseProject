@@ -3,8 +3,10 @@
 
  <head>
      <meta charset="UTF-8" />
+     <script src="jquery.js"></script>
+    <script src="views/bookingPages/scripts/changeTablePage.js"></script>   
      <link rel="stylesheet" href="views/bookingPages/styles/bookingpage--style.css">
-     <link rel="stylesheet" href="views/bookingPages/styles/table--style.css">
+     <link rel="stylesheet" href="views\bookingPages\styles\table--style.css">
      <script src="https://kit.fontawesome.com/ef0f251530.js" crossorigin="anonymous"></script>
  </head>
 
@@ -76,9 +78,7 @@
          </div>
      </div>
 
-
-    <script src="jquery.js"></script>
-    <script src="views/bookingPages/scripts/changeTablePage.js"></script>                                
+                             
  </body>
 
  </html>

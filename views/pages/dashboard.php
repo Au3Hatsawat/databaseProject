@@ -110,9 +110,18 @@
 
 
          <div class="table--wrapper">
-             <h3 class="main--title">
-                 Today's details
-             </h3>
+            <div class="header--table">
+                <div class="main--title">
+                    <h3>
+                        Today's details
+                    </h3>
+                </div>
+                <div class="all--detail">
+                    <a href="?controller=booking&action=index&buttonId=booking">
+                            see all booking
+                    </a>
+                </div>
+            </div>
              <div class="table--container">
                  <table>
                      <thead>
@@ -127,20 +136,25 @@
                          </tr>
                          <tbody>
                                 <?php
+                                    $count = 0;
                                     foreach($bookingList as $booking){
-                                        echo "<tr>
-                                        <td>$booking->bookingId</td>
-                                        <td>$booking->bookingDate</td>
-                                        <td>$booking->customerId</td>
-                                        <td>$booking->registStaffId</td>
-                                        <td>$booking->checkInDate</td>
-                                        <td>$booking->checkOutDate</td>";
-                                        if($booking->checkInStatus == 0){
-                                            echo "<td>waiting for check-in</td>";
-                                        }else if($booking->checkOutStatus == 0){
-                                            echo "<td>waiting for check-out</td>";
+                                        if($count < 5){
+                                            echo "<tr>
+                                            <td>$booking->bookingId</td>
+                                            <td>$booking->bookingDate</td>
+                                            <td>$booking->customerId</td>
+                                            <td>$booking->registStaffId</td>
+                                            <td>$booking->checkInDate</td>
+                                            <td>$booking->checkOutDate</td>";
+                                            if($booking->checkInStatus == 0){
+                                                echo "<td>waiting for check-in</td>";
+                                            }else if($booking->checkOutStatus == 0){
+                                                echo "<td>waiting for check-out</td>";
+                                            }
+                                            echo "</tr>";
+                                        }else{
+                                            break;
                                         }
-                                        echo "</tr>";
                                     }
                                 ?>
                          </tbody>

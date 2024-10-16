@@ -87,120 +87,32 @@ body{
     font-size: 15px;
 }
 
-.all--detail{
-    background: rgb(237, 237, 237);
+.add--button{
+    background: cornflowerblue;
     border-radius: 10px;
     color: rgba(113, 90, 186, 255);
     display: flex;
     align-items: center;
     gap: 5px;
     padding: 4px 12px;
-    font-size: 15px;
 }
 
-.all--detail:hover{
-    background: #fff;
+.add--button:hover{
+    background: rgb(139, 172, 231);
 }
 
-.all--detail a:link{
+.add--button a:link{
     text-decoration: none;
 }
 
-.all--detail a:visited{
+.add--button a:visited{
     text-decoration: none;
-    color: cornflowerblue;
-}
-
-.card--box{
-    background: rgb(229, 223, 223);
-    border-radius: 10px;
-    padding: 1.2rem;
-    width: 290px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.5 ease-in-out;
-}
-
-.card--box:hover{
-    transform: translateY(-5px);
-}
-
-.card--header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.amount{
-    display: flex;
-    flex-direction: column;
-}
-
-.title{
-    font-size: 17px;
-    font-weight: 150;
-    color: rgb(37, 37, 37);
-    letter-spacing: 1.5px;
-}
-
-.amount--value{
-    font-size: 30px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-}
-
-.icon{
     color: #fff;
-    padding: 1rem;
-    height: 60px;
-    width: 60px;
-    text-align: center;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    background: red;
+}
+
+.add--button i{
+    color: #fff;
 }
 
 
-.card--detail{
-    font-size: 14px;
-    color: #777777;
-    letter-spacing: 1.5px;
-}
-
-
-
-.light-red{
-    background: rgb(255, 222, 222);
-}
-
-.dark-red{
-    background: red;
-}
-
-.light-blue{
-    background: rgb(222, 222, 255);
-}
-
-.dark-blue{
-    background: blue;
-}
-
-.light-green{
-    background: rgb(222, 252, 222);
-}
-
-.dark-green{
-    background: green;
-}
-
-.light-yellow{
-    background: rgb(255, 222, 255);
-}
-
-.dark-yellow{
-    background: purple;
-}
 

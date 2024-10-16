@@ -117,9 +117,11 @@
                     </h3>
                 </div>
                 <div class="all--detail">
-                    <a href="?controller=booking&action=index&buttonId=booking">
-                            see all booking
-                    </a>
+                    <h3>
+                        <a href="?controller=booking&action=index&buttonId=booking">
+                                view all
+                        </a>
+                    </h3>
                 </div>
             </div>
              <div class="table--container">

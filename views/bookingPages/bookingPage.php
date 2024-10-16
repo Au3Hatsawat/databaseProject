@@ -35,7 +35,7 @@
                 </div>
             </div>
              <div class="table--container">
-                 <table>
+                 <table class="paginated">
                      <thead>
                          <tr>
                              <th>bookingId</th>
@@ -78,7 +78,7 @@
 
 
     <script src="jquery.js"></script>
-
+    <script src="views/bookingPages/scripts/changeTablePage.js"></script>                                
  </body>
 
  </html>

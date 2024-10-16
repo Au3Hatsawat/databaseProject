@@ -1,50 +1,50 @@
-.table--wrapper{
+.table--wrapper {
     background: #fff;
     margin-top: 1rem;
     border-radius: 10px;
     padding: 2rem;
 }
 
-.table--container{
+.table--container {
     width: 100%;
 }
 
-table{
+table {
     width: 100%;
     border-collapse: collapse;
 }
 
-thead{
+thead {
     background: cornflowerblue;
     color: #fff;
 }
 
-th{
+th {
     padding: 15px;
     text-align: left;
 }
 
-tbody{
+tbody {
     background: #f2f2f2;
 }
 
-td{
+td {
     padding: 15px;
     font-size: 14px;
     color: #333;
 }
 
-tr:nth-child(even){
+tr:nth-child(even) {
     background: #fff;
 }
 
-tfoot{
+tfoot {
     background: cornflowerblue;
     font-weight: bold;
     color: #fff;
 }
 
-tfoot td{
+tfoot td {
     padding: 15px;
 }
 
@@ -52,4 +52,25 @@ tfoot td{
     color: green;
     background: none;
     cursor: pointer;
+}
+
+div.pager {
+    text-align: center;
+    margin: 1em 0;
+}
+
+div.pager span {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8;
+    text-align: center;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    margin-right: 0.5em;
+}
+
+div.pager span.active {
+    background: #c00;
 }

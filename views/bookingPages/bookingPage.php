@@ -19,8 +19,10 @@
                  <h2>Booking</h2>
              </div>
              <div class="add--button">
+                <a href="#">
                     <i class="fa-solid fa-plus"></i>
-                </div>
+                </a>
+            </div>
              <div class="search--box">
                  <i class="fa-solid fa-magnifying-glass"></i>
                  <input tpye="text" placeholder="Search" />

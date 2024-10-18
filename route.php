@@ -1,5 +1,5 @@
 <?php
-    $controllers = array('pages'=>['dashboard','error'] , 'booking'=>['index'],'room'=>['index','type','detail']);
+    $controllers = array('pages'=>['dashboard','error'] , 'booking'=>['index']);
 
     function call($controller,$action){
         require("controllers/".$controller."_controller.php");
@@ -10,11 +10,6 @@
             case "booking": require("models/bookingModel.php");
                             $controller_obj = new BookingController();
                             break;
-            case "room": require("models/RoomModel.php");
-                        require("models/DetailModel.php");
-                        require("models/TypeModel.php");
-                            $controller_obj = new RoomController();
-                            break; 
         }
         $controller_obj->{$action}();
     }

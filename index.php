@@ -36,28 +36,10 @@ if (isset($_GET['controller']) && isset($_GET['action']) && isset($_GET['buttonI
                         <span>Booking</span>
                     </a>
                 </li>
-                <li id="user">
+                <li id="service">
                     <a href="#">
-                        <i class="fa-solid fa-user"></i>
-                        <span>Customer</span>
-                    </a>
-                </li>
-                <li id="room">
-                    <a href="?controller=room&action=index&buttonId=room">
-                        <i class="fa-solid fa-bed"></i>
-                        <span>Room</span>
-                    </a>
-                </li>
-                <li id="payment">
-                    <a href="#">
-                        <i class="fa-solid fa-money-check-dollar"></i>
-                        <span>Payment</span>
-                    </a>
-                </li>
-                <li id="staff">
-                    <a href="#">
-                        <i class="fa-solid fa-clipboard-user"></i>
-                        <span>Staff</span>
+                        <i class="fa-solid fa-list-ul"></i>
+                        <span>Services</span>
                     </a>
                 </li>
                 <li class="logout">
@@ -73,7 +55,7 @@ if (isset($_GET['controller']) && isset($_GET['action']) && isset($_GET['buttonI
     <?php require("route.php"); ?>
 
     <script>
-        const buttonList = ["staff", "payment", "room", "user", "booking", "dashboard"];
+        const buttonList = ["booking", "service", "dashboard"];
 
         function activeButton(cl) {
             var element;

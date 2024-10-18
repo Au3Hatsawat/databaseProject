@@ -58,28 +58,14 @@ body{
     transform: scale(1.2);
 }
 
-.card--container{
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.card--wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.main--title{
-    color: cornflowerblue;
-    padding-bottom: 10px;
-    font-size: 15px;
-}
-
 .add--button{
-    background: #fff;
+    width: 25px;
+    height: 25px;
+    background: cornflowerblue;
     border-radius: 15px;
+    display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -99,5 +85,13 @@ body{
 .add--button i{
     color: #fff;
 }
+
+.header2--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
 
 

@@ -76,3 +76,23 @@ div.pager span {
 div.pager span.active {
     background: cornflowerblue;
 }
+
+.status{
+    display: flex;
+    width: 70px;
+    height: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    background: rgb(255, 218, 149);
+    border-radius: 13px;
+    border: 2.5px solid #ffffffa1;
+    color: #333;
+}
+
+.detail{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

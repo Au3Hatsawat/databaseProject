@@ -20,11 +20,6 @@
              </div>
              <div class="add--button">
                     <i class="fa-solid fa-plus"></i>
-                    <span>
-                        <a href="#">
-                            ADD BOOKING
-                        </a>
-                    </span>
                 </div>
              <div class="search--box">
                  <i class="fa-solid fa-magnifying-glass"></i>
@@ -33,6 +28,7 @@
          </div>
 
         <div class="table--wrapper">
+            <h3 class="main--title">booking lists</h3>
             <div class="table--container">
                 <table class="paginated">
                     <thead>

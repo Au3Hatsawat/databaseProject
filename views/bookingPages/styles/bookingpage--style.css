@@ -77,13 +77,9 @@ body{
 }
 
 .add--button{
-    background: cornflowerblue;
-    border-radius: 10px;
-    color: rgba(113, 90, 186, 255);
-    display: flex;
+    background: #fff;
+    border-radius: 15px;
     align-items: center;
-    gap: 5px;
-    padding: 4px 12px;
     cursor: pointer;
 }
 

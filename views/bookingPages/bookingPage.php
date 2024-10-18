@@ -52,14 +52,14 @@
                                 echo "<tr>
                                             <td>$booking->bookingId</td>
                                             <td>$booking->bookingDate</td>
-                                            <td>$booking->customerId</td>
-                                            <td>$booking->registStaffId</td>
+                                            <td>$booking->customerName</td>
+                                            <td>$booking->staffName</td>
                                             <td>$booking->checkInDate</td>
                                             <td>$booking->checkOutDate</td>";
                                 if ($booking->checkInStatus == 0) {
-                                    echo "<td>waiting for check-in</td>";
+                                    echo "<td>check-in</td>";
                                 } else if ($booking->checkOutStatus == 0) {
-                                    echo "<td>waiting for check-out</td>";
+                                    echo "<td>check-out</td>";
                                 }
                                 echo "</tr>";
                             } else {

@@ -1,8 +1,8 @@
 <?php
-    $servername = "bx5u4qtnmyqtxpkwcacj-mysql.services.clever-cloud.com";
-    $username = "ulgagbtbdlssfiwt";
-    $password = "QnOhjoSRm6noNT4dtABJ";
-    $dbname = "bx5u4qtnmyqtxpkwcacj";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "hotel_crud";
     $conn = new mysqli($servername,$username,$password);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

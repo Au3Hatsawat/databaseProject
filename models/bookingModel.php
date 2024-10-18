@@ -2,10 +2,11 @@
 
 class Booking{
     public $bookingId , $bookingDate , $checkInStatus , $checkOutStatus ,
-    $checkInDate , $checkOutDate , $customerId , $registStaffId , $totalPrice;
+    $checkInDate , $checkOutDate , $customerId , $registStaffId , $totalPrice , 
+    $customerName , $staffName;
 
     public function __construct($bookingId , $bookingDate , $checkInStatus , $checkOutStatus ,
-    $checkInDate , $checkOutDate , $customerId , $registStaffId , $totalPrice)
+    $checkInDate , $checkOutDate , $customerId , $registStaffId , $totalPrice , $customerName , $staffName)
     {
         $this->bookingId = $bookingId;
         $this->bookingDate = $bookingDate;
@@ -16,12 +17,14 @@ class Booking{
         $this->customerId = $customerId;
         $this->registStaffId =  $registStaffId;
         $this->totalPrice = $totalPrice;
+        $this->customerName = $customerName;
+        $this->staffName = $staffName;
     }
 
     public static function getAll(){
         $bookingList = [];
         require("connection_connect.php");
-        $sql = "select * from booking";
+        $sql = "SELECT * FROM booking INNER JOIN customers ON customers.customerId = booking.customers_customerId INNER JOIN registstaff ON registstaff.registStaffId = booking.registStaff_registStaffId INNER JOIN staffs ON staffs.staffId = registstaff.staffs_staffId";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc()){
             $bookingId = $my_row["bookingId"];
@@ -33,8 +36,11 @@ class Booking{
             $customerId = $my_row["customers_customerId"];
             $registStaffId = $my_row["registStaff_registStaffId"]; 
             $totalPrice = $my_row["totalPrice"];
+            $customerName = $my_row["firstName"] . " " . $my_row["lastName"];
+            $staffName = $my_row["staffFristName"] . " " . $my_row["staffLastName"];
             $bookingList[] = new Booking($bookingId , $bookingDate , $checkInStatus , $checkOutStatus ,
-                                        $checkInDate , $checkOutDate , $customerId , $registStaffId , $totalPrice);
+                                        $checkInDate , $checkOutDate , $customerId , $registStaffId , $totalPrice ,
+                                         $customerName ,$staffName);
         }
         require("connection_close.php");
 

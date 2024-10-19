@@ -6,10 +6,16 @@
     <script src="jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="views/bookingPages/script/changeTablePage.js"></script>
-    <link rel="stylesheet" href="views/bookingPages/css/bookingStyle.css">
+    <link rel="stylesheet" href="views/bookingPages/css/booking--Style.css">
     <link rel="stylesheet" href="views/bookingPages/css/createBookingStyle.css">
     <link rel="stylesheet" href="views/bookingPages/css/bookingtableStyle.css">
     <script src="https://kit.fontawesome.com/ef0f251530.js" crossorigin="anonymous"></script>
+    <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
+        rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
+    </script>
 </head>
 
 <body>
@@ -115,25 +121,6 @@
                     placeholder="Enter Your Phone No."
                     id="phone" name="phone" required>
 
-                <div>
-                    <div>
-                        <label class="form-label" for="arrival">Arrival Date & Time :</label>
-                        <input class="form-input"
-                            type="datetime-local"
-                            id="arrival"
-                            name="arrival" required>
-                    </div>
-
-                    <div>
-                        <label class="form-label" for="departune">Departune Date :</label>
-                        <input class="form-input"
-                            type="date"
-                            id="departune"
-                            name="departune" required>
-                    </div>
-                </div>
-
-
                 <label class="form-label"
                     for="amount">
                     Amount of Room :
@@ -156,6 +143,18 @@
                     }
                     ?>
                 </select>
+
+                <div>
+                    <div>
+                        <label class="form-label" for="arrival">Arrival Date & Time :</label>
+                        <input class="form-input" type="text" id="arrivalDate" name="arrival">
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="departune">Departune Date :</label>
+                        <input class="form-input" type="text" id="departuneDate" name="departune">
+                    </div>
+                </div>
 
                 <label class="form-label"
                     for="service">
@@ -200,8 +199,20 @@
             })
         });
 
+
         $(function() {
-            $("#arrival").datepicker({
+            $("#arrivalDate").datepicker({
+                beforeShowDay: function(d) {
+                    // a and b are set to today ± 5 days for demonstration
+                    var a = new Date();
+                    var b = new Date();
+                    a.setDate(a.getDate() - 5);
+                    b.setDate(b.getDate() + 5);
+                    return [true, a <= d && d <= b ? "my-class" : ""];
+                }
+            });
+
+            $("#departuneDate").datepicker({
                 beforeShowDay: function(d) {
                     // a and b are set to today ± 5 days for demonstration
                     var a = new Date();

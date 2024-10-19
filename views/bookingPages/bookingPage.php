@@ -124,8 +124,8 @@
                 </label>
                 <select class="form-input" name="type">
                     <?php
-                    foreach ($roomlist as $room) {
-                        echo "<option value='$room->id'>$room->type</option>";
+                    foreach ($typeList as $type) {
+                        echo "<option value='$type->typeId'>$type->typeName</option>";
                     }
                     ?>
                 </select>

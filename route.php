@@ -8,7 +8,7 @@
                         $controller_obj = new PageController();
                         break;
             case "booking": require("models/bookingModel.php");
-                            require("models/roomModel.php");
+                            require("models/typeModel.php");
                             $controller_obj = new BookingController();
                             break;
         }

@@ -11,7 +11,8 @@
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0 2.5px;
 }
 
 thead {
@@ -34,9 +35,21 @@ td {
     color: #333;
 }
 
-tr:nth-child(even) {
-    background: #fff;
+td:first-child,
+th:first-child{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
+
+td:last-child,
+th:last-child{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* tr:nth-child(even) {
+    background: #fff;
+} */
 
 tfoot {
     background: cornflowerblue;
@@ -79,16 +92,17 @@ div.pager span.active {
 
 .status{
     display: flex;
-    width: 70px;
-    height: 35px;
+    height: 25px;
+    width: 100px;
     justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
     align-items: center;
-    background: rgb(255, 218, 149);
+    background: rgb(255, 233, 192);
     border-radius: 13px;
-    border: 2.5px solid #ffffffa1;
-    color: #333;
+    /* border: 2px solid #ffffffa1; */
+    gap: 5px;
+    padding-left: 1px;
+    padding-right: 1px;
+    color: orange;
 }
 
 .detail{
@@ -96,3 +110,18 @@ div.pager span.active {
     align-items: center;
     text-align: center;
 }
+
+.point{
+    color: orange;
+    font-size: 25px;
+}
+
+.info {
+    background: #fff;
+}
+
+.info div{
+    height: 250px;
+}
+
+  

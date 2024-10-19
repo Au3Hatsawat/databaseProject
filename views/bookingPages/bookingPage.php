@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <script src="jquery.js"></script>
-    <script src="views/bookingPages/scripts/changeTablePage.js"></script>
-    <link rel="stylesheet" href="views/bookingPages/styles/bookingStyle.css">
-    <link rel="stylesheet" href="views/bookingPages/styles/createBookingStyle.css">
-    <link rel="stylesheet" href="views/bookingPages/styles/bookingtableStyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="views/bookingPages/script/changeTablePage.js"></script>
+    <link rel="stylesheet" href="views/bookingPages/css/bookingStyle.css">
+    <link rel="stylesheet" href="views/bookingPages/css/createBookingStyle.css">
+    <link rel="stylesheet" href="views/bookingPages/css/bookingtableStyle.css">
     <script src="https://kit.fontawesome.com/ef0f251530.js" crossorigin="anonymous"></script>
 </head>
 
@@ -47,31 +48,30 @@
                     </thead>
                     <tbody>
                         <?php
-                        $count = 0;
+
                         foreach ($bookingList as $booking) {
-                            if ($count < 5) {
-                                echo "<tr>
+                            echo "<tr class='picked'>
                                             <td>$booking->bookingId</td>
                                             <td>$booking->bookingDate</td>
                                             <td>$booking->customerName</td>
                                             <td>$booking->staffName</td>";
-                                if ($booking->checkInStatus == 0) {
-                                    echo '<td><div class="status">
+                            if ($booking->checkInStatus == 0) {
+                                echo '<td><div class="status">
                                     <span>check in</span>
                                     </div></td>';
-                                    echo '<td class="detail"><a><i class="fa-solid fa-chevron-down"></i></a></td>';
-                                } else if ($booking->checkOutStatus == 0) {
-                                    echo '<td><div class="status">
+                                echo '<td class="detail"><a><i class="fa-solid fa-chevron-down"></i></a></td>';
+                            } else if ($booking->checkOutStatus == 0) {
+                                echo '<td><div class="status">
+                                    <span class="point">•</span>
                                     <span>check out</span>
                                     </div></td>';
-                                    echo '<td class="detail"><a><i class="fa-solid fa-chevron-down"></a></td>';
-                                }
-                                echo "</tr>";
-                            } else {
-                                break;
+                                echo '<td class="detail"><a id="show_detail"><i class="fa-solid fa-chevron-down"></a></td>';
                             }
+                            echo "</tr>";
+                            echo '<tr><td colspan="6" class="info"><div></div></td></tr>';
                         }
                         ?>
+
                     </tbody>
                 </table>
             </div>
@@ -100,35 +100,20 @@
                 </div>
 
                 <label class="form-label"
+                    for="email">
+                    Email :
+                </label>
+                <input class="form-input" type="email"
+                    placeholder="Enter Your Email"
+                    id="email" name="email" required>
+
+                <label class="form-label"
                     for="phone">
                     Phone No. :
                 </label>
                 <input class="form-input" type="text"
                     placeholder="Enter Your Phone No."
                     id="phone" name="phone" required>
-
-                <label class="form-label"
-                    for="phone">
-                    Number of Guests :
-                </label>
-                <select class="form-input" name="numGuest">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-
-                <label class="form-label"
-                    for="type">
-                    Room Type :
-                </label>
-                <select class="form-input" name="type">
-                    <?php
-                    foreach ($typeList as $type) {
-                        echo "<option value='$type->typeId'>$type->typeName</option>";
-                    }
-                    ?>
-                </select>
 
                 <div>
                     <div>
@@ -147,7 +132,43 @@
                             name="departune" required>
                     </div>
                 </div>
-                
+
+
+                <label class="form-label"
+                    for="amount">
+                    Amount of Room :
+                </label>
+                <select class="form-input" name="amount">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+                <label class="form-label"
+                    for="type">
+                    Room Type :
+                </label>
+                <select class="form-input" name="type">
+                    <?php
+                    foreach ($typeList as $type) {
+                        echo "<option value='$type->typeId'>$type->typeName</option>";
+                    }
+                    ?>
+                </select>
+
+                <label class="form-label"
+                    for="service">
+                    Service :
+                </label>
+                <select class="form-input" name="service" multiple>
+                    <?php
+                    foreach ($serviceList as $service) {
+                        echo "<option value='$service->serviceId'>$service->serviceName</option>";
+                    }
+                    ?>
+                </select>
+
                 <button class="btn-submit"
                     type="submit">
                     Create Booking
@@ -167,6 +188,30 @@
             const overlay = document.getElementById('popupOverlay');
             overlay.classList.toggle('show');
         }
+
+        $(document).ready(function() {
+            $("tr").find(".info").hide();
+            $("tr").on("click", function() {
+                if ($(this).closest("tr").next("tr").find(".info").css('display') == 'none') {
+                    $(this).closest("tr").next("tr").find(".info").show();
+                } else {
+                    $(this).closest("tr").next("tr").find(".info").hide();
+                }
+            })
+        });
+
+        $(function() {
+            $("#arrival").datepicker({
+                beforeShowDay: function(d) {
+                    // a and b are set to today ± 5 days for demonstration
+                    var a = new Date();
+                    var b = new Date();
+                    a.setDate(a.getDate() - 5);
+                    b.setDate(b.getDate() + 5);
+                    return [true, a <= d && d <= b ? "my-class" : ""];
+                }
+            });
+        });
     </script>
 </body>
 

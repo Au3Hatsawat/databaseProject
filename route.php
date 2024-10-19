@@ -9,6 +9,7 @@
                         break;
             case "booking": require("models/bookingModel.php");
                             require("models/typeModel.php");
+                            require("models/serviceModel.php");
                             $controller_obj = new BookingController();
                             break;
         }

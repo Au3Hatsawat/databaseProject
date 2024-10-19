@@ -61,7 +61,7 @@ body{
 .add--button{
     width: 25px;
     height: 25px;
-    background: cornflowerblue;
+    background: rgb(0, 0, 0);
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -92,6 +92,12 @@ body{
     align-items: center;
     gap: 15px;
 }
+
+.my-class a {
+    background: #FC0 !important;
+  }
+  
+  
 
 
 

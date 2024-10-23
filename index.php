@@ -51,8 +51,9 @@ if (isset($_GET['controller']) && isset($_GET['action']) && isset($_GET['buttonI
             </ul>
         </div>
     </div>
-    
-    <?php require("route.php"); ?>
+
+    <?php
+    require("route.php"); ?>
 
     <script>
         const buttonList = ["booking", "service", "dashboard"];

@@ -6,9 +6,9 @@
     <script src="jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="views/bookingPages/script/changeTablePage.js"></script>
-    <link rel="stylesheet" href="views/bookingPages/css/booking--Style.css">
-    <link rel="stylesheet" href="views/bookingPages/css/createBookingStyle.css">
-    <link rel="stylesheet" href="views/bookingPages/css/bookingtableStyle.css">
+    <link rel="stylesheet" href="views/bookingPages/css/booking-Style.css">
+    <link rel="stylesheet" href="views/bookingPages/css/createBooking-Style.css">
+    <link rel="stylesheet" href="views/bookingPages/css/bookingtable-Style.css">
     <script src="https://kit.fontawesome.com/ef0f251530.js" crossorigin="anonymous"></script>
     <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
         rel='stylesheet'>
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-
+    <!-- header container -->
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
@@ -39,6 +39,8 @@
 
         </div>
 
+
+        <!-- table container -->
         <div class="table--wrapper">
             <div class="table--container">
                 <table class="paginated">
@@ -63,6 +65,7 @@
                                             <td>$booking->staffName</td>";
                             if ($booking->checkInStatus == 0) {
                                 echo '<td><div class="status">
+                                    <span class="point">•</span>
                                     <span>check in</span>
                                     </div></td>';
                                 echo '<td class="detail"><a><i class="fa-solid fa-chevron-down"></i></a></td>';
@@ -89,7 +92,7 @@
         class="overlay-container">
         <div class="popup-box">
             <h2 style="color: cornflowerblue;">CREATE NEW BOOKING</h2>
-            <form class="form-container">
+            <form method="GET" class="form-container">
                 <label class="form-label"
                     for="name">
                     Name :
@@ -139,7 +142,7 @@
                 <select class="form-input" name="type">
                     <?php
                     foreach ($typeList as $type) {
-                        echo "<option value='$type->typeId'>$type->typeName</option>";
+                        echo "<option value='$type->typeId $type->price'>$type->typeName</option>";
                     }
                     ?>
                 </select>
@@ -160,16 +163,17 @@
                     for="service">
                     Service :
                 </label>
-                <select class="form-input" name="service" multiple>
+                <select class="form-input" name="service[]" multiple>
                     <?php
                     foreach ($serviceList as $service) {
-                        echo "<option value='$service->serviceId'>$service->serviceName</option>";
+                        echo "<option value='$service->serviceId $service->servicePrice'>$service->serviceName</option>";
                     }
                     ?>
                 </select>
-
+                <input type="hidden" name="controller" value="booking"/>
+                <input type="hidden" name="buttonId" value="booking"/>
                 <button class="btn-submit"
-                    type="submit">
+                    type="submit" name="action" value="addBooking">
                     Create Booking
                 </button>
             </form>

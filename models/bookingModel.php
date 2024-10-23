@@ -47,6 +47,16 @@ class Booking{
         return $bookingList;
     }
 
+    public static function add($checkInDate,$checkOutDate,$customerId,$registStaffId,$totalPrice){
+        require("connection_connect.php");
+        $todaydate = date("Y-m-d h:i:sa");
+        $sql = "insert into booking (bookingDate,checkInDate,checkOutDate,customers_customerId,registStaff_registStaffId,totalPrice)
+        values ('$todaydate','$checkInDate','$checkOutDate','$customerId','$registStaffId','$totalPrice')";
+        $conn->query($sql);
+        $lastId = $conn->insert_id;
+        require("connection_close.php");
+        return $lastId;
+    }
 }
 
 ?>

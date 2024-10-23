@@ -14,14 +14,25 @@
             $this->customerEmail = $customerEmail;
         }
 
-        public static function add($customerId , $firstName , $lastName , $customerIdCard ,
+        public static function add($firstName , $lastName , $customerIdCard ,
         $phoneNo , $customerEmail){
             require("connection_connect.php");
-            $sql = "insert into customers (customerId,firstName,lastName,customerIdCard,phoneNo,customerEmail)
-                    values($customerId , '$firstName' , '$lastName' , '$customerIdCard' , '$phoneNo' , '$customerEmail')";
-            $result = $conn->query($sql);
+            $sql = "insert into customers (firstName,lastName,customerIdCard,phoneNo,customerEmail)
+                    values('$firstName' , '$lastName' , '$customerIdCard' , '$phoneNo' , '$customerEmail')";
+            $conn->query($sql);
+            $lastId = $conn->insert_id;
             require("connection_close.php");
-            return "add success $result rows";
+            return $lastId;
+        }
+
+        public static function get($firstName , $lastName){
+            require("connection_connect.php");
+            $sql = "select * from customers where firstName like '%$firstName%' and lastName like '%$lastName%'";
+            $result = $conn->query($sql);
+            $my_row = $result->fetch_assoc();
+            $customerId = $my_row["customerId"];
+            require("connection_close.php");
+            return $customerId;
         }
     }
 ?>

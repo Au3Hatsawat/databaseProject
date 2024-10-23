@@ -12,13 +12,14 @@
             $this->checkOutDate = $checkOutDate;
         }
 
-        public static function add($bookingDetailId , $bookingId , $tpyeName , $checkInDate , $checkOutDate){
+        public static function add($bookingId , $roomId){
             require("connection_connect.php");
-            $sql = "insert into bookingdetail (bookingDetailId,booking_bookingId,rooms_roomId)
-            values ($bookingDetailId , $bookingId , $roomId)";
-            $result = $conn->query($sql);
+            $sql = "insert into bookingdetail (booking_bookingId,rooms_roomId)
+            values ($bookingId , $roomId)";
+            $conn->query($sql);
+            $lastId = $conn->insert_id;
             require("connection_close.php");
-            return "add success $result rows";
+            return $lastId;
         }
 
         public static function getAll(){

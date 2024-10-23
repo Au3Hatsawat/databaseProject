@@ -9,10 +9,10 @@
             $this->serviceId = $serviceId;
         }
 
-        public static function add(){
+        public static function add($bookingDetailId , $serviceId){
             require("connection_connect.php");
-            $sql = "insert into optional (optionalId,bookingDetail_bookingDetailId,services_serviceId)
-            values ($optionalId , $bookingDetailId , $serviceId)";
+            $sql = "insert into optional (bookingDetail_bookingDetailId,services_serviceId)
+            values ($bookingDetailId , $serviceId)";
             $result = $conn->query($sql);
             require("connection_close.php");
             return $result;

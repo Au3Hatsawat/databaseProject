@@ -57,6 +57,7 @@ class Booking{
         require("connection_close.php");
         return $lastId;
     }
+
 }
 
 ?>

@@ -139,7 +139,7 @@
                     for="type">
                     Room Type :
                 </label>
-                <select class="form-input" name="type">
+                <select class="form-input" name="type" id="roomType">
                     <?php
                     foreach ($typeList as $type) {
                         echo "<option value='$type->typeId $type->price'>$type->typeName</option>";
@@ -158,7 +158,6 @@
                         <input class="form-input" type="text" id="departuneDate" name="departune">
                     </div>
                 </div>
-
                 <label class="form-label"
                     for="service">
                     Service :
@@ -170,8 +169,8 @@
                     }
                     ?>
                 </select>
-                <input type="hidden" name="controller" value="booking"/>
-                <input type="hidden" name="buttonId" value="booking"/>
+                <input type="hidden" name="controller" value="booking" />
+                <input type="hidden" name="buttonId" value="booking" />
                 <button class="btn-submit"
                     type="submit" name="action" value="addBooking">
                     Create Booking
@@ -192,17 +191,18 @@
             overlay.classList.toggle('show');
         }
 
-        $(document).ready(function() {
-            $("tr").find(".info").hide();
-            $("tr").on("click", function() {
-                if ($(this).closest("tr").next("tr").find(".info").css('display') == 'none') {
-                    $(this).closest("tr").next("tr").find(".info").show();
-                } else {
-                    $(this).closest("tr").next("tr").find(".info").hide();
-                }
-            })
-        });
-
+        $(document).ready(
+            function() {
+                $("tr").find(".info").hide();
+                $("tr").on("click", function() {
+                    if ($(this).closest("tr").next("tr").find(".info").css('display') == 'none') {
+                        $(this).closest("tr").next("tr").find(".info").show();
+                    } else {
+                        $(this).closest("tr").next("tr").find(".info").hide();
+                    }
+                })
+            }
+        );
 
         $(function() {
             $("#arrivalDate").datepicker({
@@ -226,7 +226,8 @@
                     return [true, a <= d && d <= b ? "my-class" : ""];
                 }
             });
-        });
+        });      
+
     </script>
 </body>
 

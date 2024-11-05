@@ -13,6 +13,7 @@ table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 2.5px;
+    font-weight: bold;
 }
 
 thead {
@@ -92,16 +93,26 @@ div.pager span.active {
 
 .status{
     display: flex;
-    height: 25px;
+    height: 30px;
     width: 100px;
     justify-content: center;
     align-items: center;
-    background: rgb(255, 233, 192);
-    border-radius: 13px;
-    /* border: 2px solid #ffffffa1; */
+    background: #ffd0d0;
+    border-radius: 10px;
+    border: 2px solid #ffffffa1;
     gap: 5px;
     padding-left: 1px;
     padding-right: 1px;
+    color: rgb(255, 81, 81);
+}
+
+.green--status{
+    background: rgb(169, 247, 169);
+    color: green;
+}
+
+.orange--status{
+    background: rgb(255, 227, 176);
     color: orange;
 }
 
@@ -112,16 +123,150 @@ div.pager span.active {
 }
 
 .point{
-    color: orange;
+    color: rgb(255, 81, 81);
     font-size: 25px;
+}
+
+.green--point{
+    color: green;
+}
+
+.orange--point{
+    color: orange;
 }
 
 .info {
     background: #fff;
 }
 
-.info div{
+.card--container{
     height: 250px;
+    border-radius: 15px;
 }
 
-  
+.card--title{
+    color: cornflowerblue;
+    font-size: 16px;
+}
+
+.card--header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #f2f2f2;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+}
+
+.detail--container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+    font-size: 14px;
+}
+
+.button--header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.edit--button{
+    width: 25px;
+    height: 25px;
+    background: cornflowerblue;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.edit--button:hover {
+    background: rgb(139, 172, 231);
+}
+
+.edit--button a:link {
+    text-decoration: none;
+}
+
+.edit--button a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.edit--button i {
+    color: #fff;
+}
+
+.delete--button{
+    width: 25px;
+    height: 25px;
+    background: rgb(253, 129, 129);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.delete--button:hover {
+    background: rgb(253, 181, 181);
+}
+
+.delete--button a:link {
+    text-decoration: none;
+}
+
+.delete--button a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.delete--button i {
+    color: #fff;
+}
+
+.check--button{
+    width: 25px;
+    height: 25px;
+    background: rgb(110, 185, 110);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.check--button:hover {
+    background: rgb(164, 206, 164);
+}
+
+.check--button a:link {
+    text-decoration: none;
+}
+
+.check--button a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.check--button i {
+    color: #fff;
+}
+
+.total--container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 2px solid #f2f2f2;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+    font-size: 16px;
+}

@@ -34,5 +34,15 @@
             require("connection_close.php");
             return $customerId;
         }
+
+        public static function update($customerId , $firstName , $lastName , $phoneNo , $customerEmail){
+            require("connection_connect.php");
+            $sql = "UPDATE customers
+                    SET firstName = '$firstName', lastName = '$lastName', phoneNo = '$phoneNo', customerEmail='$customerEmail'
+                    WHERE customerId = '$customerId'";
+            $result = $conn->query($sql);
+            require("connection_close.php");
+            return $result;
+        }
     }
 ?>

@@ -1,5 +1,5 @@
 <?php
-    $controllers = array('pages'=>['dashboard','error'] , 'booking'=>['index','addBooking']);
+    $controllers = array('pages'=>['dashboard','error'] , 'booking'=>['index','addBooking','delete','update','statusUpdate']);
 
     function call($controller,$action){
         require("controllers/".$controller."_controller.php");
@@ -14,6 +14,7 @@
                             require("models/customerModel.php");
                             require("models/optionalModel.php");
                             require("models/roomModel.php");
+                            require("models/bookingDetailDTO.php");
                             $controller_obj = new BookingController();
                             break;
         }

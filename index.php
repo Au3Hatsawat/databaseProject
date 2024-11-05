@@ -27,25 +27,25 @@ if (isset($_GET['controller']) && isset($_GET['action']) && isset($_GET['buttonI
                 <li id="dashboard" class="active">
                     <a href="?controller=pages&action=dashboard&buttonId=dashboard">
                         <i class="fa-solid fa-table-columns"></i>
-                        <span>Dashboard</span>
+                        <span style='font-weight: bold;'>Dashboard</span>
                     </a>
                 </li>
                 <li id="booking" class="inactive">
                     <a href="?controller=booking&action=index&buttonId=booking">
                         <i class="fa-solid fa-book-open"></i>
-                        <span>Booking</span>
+                        <span style='font-weight: bold;'>Booking</span>
                     </a>
                 </li>
                 <li id="service">
                     <a href="#">
                         <i class="fa-solid fa-list-ul"></i>
-                        <span>Services</span>
+                        <span style='font-weight: bold;'>Services</span>
                     </a>
                 </li>
                 <li class="logout">
                     <a href="#">
                         <i class="fa-solid fa-right-from-bracket"></i>
-                        <span>Logout</span>
+                        <span style='font-weight: bold;'>Logout</span>
                     </a>
                 </li>
             </ul>

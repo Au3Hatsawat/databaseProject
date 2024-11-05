@@ -24,10 +24,10 @@ if (isset($_GET['controller']) && isset($_GET['action']) && isset($_GET['buttonI
     <div class="sidebar">
         <div class="logo">
             <ul class="menu">
-                <li id="dashboard" class="active">
-                    <a href="?controller=pages&action=dashboard&buttonId=dashboard">
+                <li id="customerbooking" class="active">
+                    <a href="?controller=customerbooking&action=createBooking&buttonId=customerbooking">
                         <i class="fa-solid fa-table-columns"></i>
-                        <span style='font-weight: bold;'>Dashboard</span>
+                        <span style='font-weight: bold;'>customer page</span>
                     </a>
                 </li>
                 <li id="booking" class="inactive">
@@ -37,7 +37,7 @@ if (isset($_GET['controller']) && isset($_GET['action']) && isset($_GET['buttonI
                     </a>
                 </li>
                 <li id="service">
-                    <a href="#">
+                    <a href="?controller=service&action=index&buttonId=service">
                         <i class="fa-solid fa-list-ul"></i>
                         <span style='font-weight: bold;'>Services</span>
                     </a>
@@ -56,7 +56,7 @@ if (isset($_GET['controller']) && isset($_GET['action']) && isset($_GET['buttonI
     require("route.php"); ?>
 
     <script>
-        const buttonList = ["booking", "service", "dashboard"];
+        const buttonList = ["booking", "service", "customerbooking"];
 
         function activeButton(cl) {
             var element;

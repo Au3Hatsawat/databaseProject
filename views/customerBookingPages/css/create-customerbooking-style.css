@@ -50,6 +50,14 @@
     width: 245px;
 }
 
+.form-input-amount-type{
+    width: 245px;
+}
+
+.input-container{
+    gap: 20px;
+}
+
 .form-container div{
     display: flex;
     justify-content: space-between;
@@ -99,9 +107,10 @@
     opacity: 1;
 }
 
-.input-container{
+.table--container {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    align-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

@@ -24,5 +24,32 @@
 
             return $serviceList;
         }
+
+        public static function add($serviceName,$servicePrice){
+            require("connection_connect.php");
+            $sql = "INSERT INTO services(serviceName,servicePrice)
+                    VALUES ('$serviceName','$servicePrice')";
+            $result = $conn->query($sql);
+            require("connection_close.php");
+            return $result;
+        }
+
+        public static function update($serviceId,$serviceName,$servicePrice){
+            require("connection_connect.php");
+            $sql = "UPDATE services
+                    SET serviceName = '$serviceName' , servicePrice = '$servicePrice'
+                    WHERE serviceId = '$serviceId'";
+            $result = $conn->query($sql);
+            require("connection_close.php");
+            return $result;
+        }
+
+        public static function delete($id){
+            require("connection_connect.php");
+            $sql = "DELETE FROM services WHERE serviceId = '$id'";
+            $result = $conn->query($sql);
+            require("connection_close.php");
+            return $result;
+        }
     }
 ?>

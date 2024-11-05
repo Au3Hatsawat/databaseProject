@@ -10,12 +10,10 @@
     <link rel="stylesheet" href="views/bookingPages/css/createBooking-Style.css">
     <link rel="stylesheet" href="views/bookingPages/css/bookingtable-Style.css">
     <script src="https://kit.fontawesome.com/ef0f251530.js" crossorigin="anonymous"></script>
-    <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
-        rel='stylesheet'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
-    </script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
 
 </head>
 
@@ -169,7 +167,7 @@
     <div id="popupOverlayCreateForm"
         class="overlay-container">
         <div class="popup-box">
-            <h2 style="color: cornflowerblue;">CREATE NEW BOOKING</h2>
+            <h2 style="color: cornflowerblue; margin-bottom: 20px;">CREATE NEW BOOKING</h2>
             <form method="GET" class="form-container">
                 <label class="form-label"
                     for="name">
@@ -267,7 +265,7 @@
     <div id="popupOverlayUpdateForm"
         class="overlay-container">
         <div class="popup-box">
-            <h2 style="color: cornflowerblue;">UPDATE BOOKING</h2>
+            <h2 style="color: cornflowerblue; margin-bottom: 20px;">UPDATE BOOKING</h2>
             <form method="GET" class="form-container">
                 <label class="form-label"
                     for="name">
@@ -373,7 +371,7 @@
     <div id="popupOverlayDeleteForm"
         class="overlay-container">
         <div class="popup-box">
-            <h3 style="color: cornflowerblue;">Are you sure to delete this booking?</h3>
+            <h3 style="color: cornflowerblue; margin-bottom: 20px;">Are you sure to delete this booking?</h3>
             <div>
                 <label id="deleteBookinglabel"></label>
             </div>
@@ -397,7 +395,7 @@
     <div id="popupOverlayStatusUpdateForm"
         class="overlay-container">
         <div class="popup-box">
-            <h3 style="color: cornflowerblue;">Are you sure to update status this booking?</h3>
+            <h3 style="color: cornflowerblue; margin-bottom: 20px;">Are you sure to update status this booking?</h3>
             <div>
                 <label id="statusUpdateBookinglabel"></label>
             </div>

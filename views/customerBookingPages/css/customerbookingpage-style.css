@@ -98,3 +98,16 @@ body {
 .my-class a {
     background: #FC0 !important;
 }
+
+.header--container{
+    color: cornflowerblue;
+    border-bottom: 1.2px solid #686868;
+}
+
+.header--container h2{
+    margin-bottom: 10px;
+}
+
+.header--container p{
+    margin-bottom: 10px;
+}

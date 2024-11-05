@@ -1,0 +1,100 @@
+@import url("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/blitzer/jquery-ui.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Gill Sans", sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+.main--content {
+    position: relative;
+    background: #ebe9e9;
+    width: 100%;
+    padding: 1rem;
+}
+
+.header--wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+}
+
+.header--title {
+    color: cornflowerblue;
+}
+
+.search--box {
+    background: rgb(237, 237, 237);
+    border-radius: 15px;
+    color: rgba(113, 90, 186, 255);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+}
+
+.search--box input {
+    background: transparent;
+    padding: 10px;
+}
+
+.search--box i {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5 ease-out;
+}
+
+.search--box i:hover {
+    transform: scale(1.2);
+}
+
+.add--button {
+    width: 25px;
+    height: 25px;
+    background: cornflowerblue;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.add--button:hover {
+    background: rgb(139, 172, 231);
+}
+
+.add--button a:link {
+    text-decoration: none;
+}
+
+.add--button a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.add--button i {
+    color: #fff;
+}
+
+.header2--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.my-class a {
+    background: #FC0 !important;
+}

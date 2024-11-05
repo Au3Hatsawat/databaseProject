@@ -28,7 +28,7 @@ class BookingDetail
         require("connection_connect.php");
         $sql = "UPDATE bookingdetail
                 SET rooms_roomId = '$roomId'
-                WHERE bookingdetail.bookingDetailId = '$bookingDetailId'";
+                where bookingdetail.bookingDetailId = '$bookingDetailId'";
         $result = $conn->query($sql);
         require("connection_close.php");
         return $result;
@@ -36,9 +36,16 @@ class BookingDetail
 
     public static function delete($id){
         require("connection_connect.php");
-        $sql = "DELETE FROM bookingdetail WHERE bookingDetailId = '$id'";
+        $sql = "delete from bookingdetail where bookingDetailId = $id";
         $result = $conn->query($sql);
         require("connection_close.php");
         return $result;
+    }
+
+    public static function get($bookingId){
+        require("connection_connect.php");
+        $sql = "delete from bookingdetail where booking_bookingId = $bookingId";
+        $conn->query($sql);
+        require("connection_close.php");
     }
 }

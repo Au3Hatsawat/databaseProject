@@ -20,8 +20,10 @@
             }
             $amount = $_GET["amount"];
             $staffid = 1;
-            $arrival = strtotime($_GET['arrival'] . '14:00:00');
-            $departune = strtotime($_GET['departune'] . '12:00:00');
+            $arrival = strtotime($_GET['arrival'] . "14:00:00");
+            $departune = strtotime($_GET['departune'] . "12:00:00");
+            $x = date("Y-m-d H:i:s", $arrival);
+            $y = date("Y-m-d H:i:s", $departune);
             $total = 0;
             $typeAndPrice = $_GET["type"];
             $typeId = explode(' ', $typeAndPrice)[0];
@@ -33,9 +35,9 @@
             }
             $total += $typePrice;
             $total *= $amount;
-            $bookingId = Booking::add(date('Y-m-d h:i:sa',$arrival),date('Y-m-d h:i:sa',$departune),$customerId,$staffid,$total);
+            $bookingId = Booking::add($x,$y,$customerId,$staffid,$total);
             for($i = 0;$i < $amount;$i++){
-                $getRoomId = Room::getAvailableRoom(date('Y-m-d h:i:sa',$arrival),date('Y-m-d h:i:sa',$departune),$typeId);
+                $getRoomId = Room::getAvailableRoom($x,$y,$typeId);
                 if($getRoomId != null){
                     $roomId = $getRoomId;
                 }else{
@@ -63,9 +65,11 @@
             $phone = $_GET["phone"];
             $customerId = $_GET["customerId"];
             $bookingId = $_GET["bookingId"];
-            $bookingDetailIdList = explode(',',$_GET["bookingDetailId"][0]);
-            $arrival = strtotime($_GET['arrival'] . '14:00:00');
-            $departune = strtotime($_GET['departune'] . '12:00:00');
+            BookingDetail::get($bookingId);
+            $arrival = strtotime($_GET['arrival'] . "14:00:00");
+            $departune = strtotime($_GET['departune'] . "12:00:00");
+            $x = date("Y-m-d H:i:s", $arrival);
+            $y = date("Y-m-d H:i:s", $departune);
             $amount = $_GET["amount"];
             $staffid = 1;
             $total = 0;
@@ -80,16 +84,7 @@
             $total += $typePrice;
             $total *= $amount;
             Customer::update($customerId,$fName,$lName,$phone,$email);
-            Booking::update($bookingId,date('Y-m-d h:i:sa',$arrival),date('Y-m-d h:i:sa',$departune),$customerId,$staffid, $total);
-            foreach($bookingDetailIdList as $bookingDetail){
-                BookingDetail::delete($bookingDetail);
-            }
-            foreach($service as $s){
-                $servicePrice = explode(' ', $s)[1];
-                $total += $servicePrice;
-            }
-            $total += $typePrice;
-            $total *= $amount;
+            Booking::update($bookingId,$x,$y,$customerId,$staffid,$total);
             for($i = 0;$i < $amount;$i++){
                 $getRoomId = Room::getAvailableRoom(date('Y-m-d h:i:sa',$arrival),date('Y-m-d h:i:sa',$departune),$typeId);
                 if($getRoomId != null){

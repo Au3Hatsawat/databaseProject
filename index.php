@@ -4,8 +4,8 @@ if (isset($_GET['controller']) && isset($_GET['action']) && isset($_GET['buttonI
     $action = $_GET['action'];
     $buttonId = $_GET['buttonId'];
 } else {
-    $controller = 'pages';
-    $action = 'dashboard';
+    $controller = 'customerbooking';
+    $action = 'createBooking';
 }
 ?>
 

@@ -30,7 +30,7 @@ INNER JOIN rooms ON bookingdetail.rooms_roomId != rooms.roomId
 WHERE rooms.roomId NOT IN (SELECT bookingdetail.rooms_roomId FROM bookingdetail) AND
 	booking.checkInDate >= '$arrival' AND
     booking.checkOutDate <= '$departune' AND
-    rooms.types_typeId = '$typeId'";
+    rooms.types_typeId = $typeId";
             $result = $conn->query($sql);
             $roomId = null;
             while($my_row = $result->fetch_assoc()){

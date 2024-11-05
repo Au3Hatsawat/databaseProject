@@ -53,7 +53,7 @@ class Booking
             $registStaffId = $my_row["registStaff_registStaffId"];
             $totalPrice = $my_row["totalPrice"];
             $customerName = $my_row["firstName"] . " " . $my_row["lastName"];
-            $staffName = $my_row["staffFristName"] . " " . $my_row["staffLastName"];
+            $staffName = $my_row["staffFirstName"] . " " . $my_row["staffLastName"];
             $bookingList[] = new Booking(
                 $bookingId,
                 $bookingDate,
@@ -76,9 +76,9 @@ class Booking
     public static function add($checkInDate, $checkOutDate, $customerId, $registStaffId, $totalPrice)
     {
         require("connection_connect.php");
-        $todaydate = date("Y-m-d h:i:sa");
+        $todaydate = date("Y-m-d H:i:s");
         $sql = "insert into booking (bookingDate,checkInDate,checkOutDate,customers_customerId,registStaff_registStaffId,totalPrice)
-        values ('$todaydate','$checkInDate','$checkOutDate','$customerId','$registStaffId','$totalPrice')";
+        values ('$todaydate','$checkInDate','$checkOutDate',$customerId,$registStaffId,$totalPrice)";
         $conn->query($sql);
         $lastId = $conn->insert_id;
         require("connection_close.php");
@@ -87,7 +87,7 @@ class Booking
 
     public static function delete($id){
         require("connection_connect.php");
-        $sql = "DELETE FROM booking WHERE booking.bookingId = '$id'";
+        $sql = "DELETE FROM booking where booking.bookingId = $id";
         $result = $conn->query($sql);
         require("connection_close.php");
         return $result;
@@ -95,10 +95,10 @@ class Booking
 
     public static function update($bookingId,$checkInDate , $checkOutDate , $customerId , $registStaffId , $totalPrice){
         require("connection_connect.php");
-        $sql = "UPDATE booking
-                SET checkInDate = '$checkInDate', checkOutDate = '$checkOutDate' , customers_customerId = '$customerId' ,
-                    registStaff_registStaffId = '$registStaffId' , totalPrice = '$totalPrice'
-                WHERE booking.bookingId = '$bookingId'";
+        $sql = "update booking
+                set checkInDate = '$checkInDate', checkOutDate = '$checkOutDate' , customers_customerId = $customerId ,
+                    registStaff_registStaffId = $registStaffId , totalPrice = $totalPrice
+                where booking.bookingId = $bookingId";
         $result = $conn->query($sql);
         require("connection_close.php");
         return $result;
@@ -106,9 +106,9 @@ class Booking
 
     public static function updateStatus($bookingId,$checkInStatus,$checkOutStatus){
         require("connection_connect.php");
-        $sql = "UPDATE booking
-                SET checkInStatus = '$checkInStatus' , checkOutStatus = '$checkOutStatus'
-                WHERE bookingId = '$bookingId'";
+        $sql = "update booking
+                set checkInStatus = '$checkInStatus' , checkOutStatus = '$checkOutStatus'
+                where bookingId = '$bookingId'";
         $result = $conn->query($sql);
         require("connection_close.php");
         return $result;

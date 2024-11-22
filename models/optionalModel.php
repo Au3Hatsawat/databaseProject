@@ -20,9 +20,9 @@
 
         public static function update($bookingDetailId , $serviceId){
             require("connection_connect.php");
-            $sql = "UPDATE optional
-                    SET services_serviceId = '$serviceId'
-                    WHERE bookingDetail_bookingDetailId = '$bookingDetailId'";
+            $sql = "update optional
+                    set services_serviceId = '$serviceId'
+                    where bookingDetail_bookingDetailId = '$bookingDetailId'";
             $result = $conn->query($sql);
             require("connection_close.php");
             return $result;

@@ -32,46 +32,6 @@ class Booking
         $this->staffName = $staffName;
     }
 
-    public static function getAll()
-    {
-        $bookingList = [];
-        require("connection_connect.php");
-        $sql = "SELECT * FROM booking 
-                INNER JOIN customers ON customers.customerId = booking.customers_customerId 
-                INNER JOIN registstaff ON registstaff.registStaffId = booking.registStaff_registStaffId 
-                INNER JOIN staffs ON staffs.staffId = registstaff.staffs_staffId
-                ORDER BY bookingId DESC";
-        $result = $conn->query($sql);
-        while ($my_row = $result->fetch_assoc()) {
-            $bookingId = $my_row["bookingId"];
-            $bookingDate = $my_row["bookingDate"];
-            $checkInStatus = $my_row["checkInStatus"];
-            $checkOutStatus = $my_row["checkOutStatus"];
-            $checkInDate = $my_row["checkInDate"];
-            $checkOutDate = $my_row["checkOutDate"];
-            $customerId = $my_row["customers_customerId"];
-            $registStaffId = $my_row["registStaff_registStaffId"];
-            $totalPrice = $my_row["totalPrice"];
-            $customerName = $my_row["firstName"] . " " . $my_row["lastName"];
-            $staffName = $my_row["staffFirstName"] . " " . $my_row["staffLastName"];
-            $bookingList[] = new Booking(
-                $bookingId,
-                $bookingDate,
-                $checkInStatus,
-                $checkOutStatus,
-                $checkInDate,
-                $checkOutDate,
-                $customerId,
-                $registStaffId,
-                $totalPrice,
-                $customerName,
-                $staffName
-            );
-        }
-        require("connection_close.php");
-
-        return $bookingList;
-    }
 
     public static function add($checkInDate, $checkOutDate, $customerId, $registStaffId, $totalPrice)
     {
@@ -87,7 +47,7 @@ class Booking
 
     public static function delete($id){
         require("connection_connect.php");
-        $sql = "DELETE FROM booking where booking.bookingId = $id";
+        $sql = "delete from booking where booking.bookingId = $id";
         $result = $conn->query($sql);
         require("connection_close.php");
         return $result;

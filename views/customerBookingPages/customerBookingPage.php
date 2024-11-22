@@ -127,8 +127,8 @@
                     // a and b are set to today ± 5 days for demonstration
                     var a = new Date();
                     var b = new Date();
-                    a.setDate(a.getDate() - 5);
-                    b.setDate(b.getDate() + 5);
+                    // a.setDate(a.getDate() - 5);
+                    // b.setDate(b.getDate() + 5);
                     return [true, a <= d && d <= b ? "my-class" : ""];
                 }
             });
@@ -138,8 +138,8 @@
                     // a and b are set to today ± 5 days for demonstration
                     var a = new Date();
                     var b = new Date();
-                    a.setDate(a.getDate() - 5);
-                    b.setDate(b.getDate() + 5);
+                    // a.setDate(a.getDate() - 5);
+                    // b.setDate(b.getDate() + 5);
                     return [true, a <= d && d <= b ? "my-class" : ""];
                 }
             });

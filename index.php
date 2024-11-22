@@ -43,7 +43,7 @@ if (isset($_GET['controller']) && isset($_GET['action']) && isset($_GET['buttonI
                     </a>
                 </li>
                 <li class="logout">
-                    <a href="#">
+                    <a href="https://bservcpe.eng.kps.ku.ac.th/db24/db24_100/g09/">
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span style='font-weight: bold;'>Logout</span>
                     </a>

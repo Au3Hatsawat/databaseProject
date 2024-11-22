@@ -11,7 +11,7 @@
 
         public static function get($typeId){
             require("connection_connect.php");
-            $sql = "SELECT * FROM rooms WHERE types_typeId = $typeId";
+            $sql = "select * from rooms where types_typeId = $typeId";
             $result = $conn->query($sql);
             while($my_row = $result->fetch_assoc()){
                 $roomId = $my_row["roomId"];
@@ -24,12 +24,11 @@
 
         public static function getAvailableRoom($arrival , $departune , $typeId){
             require("connection_connect.php");
-            $sql = "SELECT DISTINCT booking.checkInDate , booking.checkOutDate , rooms.roomId FROM booking
-INNER JOIN bookingdetail ON bookingdetail.booking_bookingId = booking.bookingId
-INNER JOIN rooms ON bookingdetail.rooms_roomId != rooms.roomId
-WHERE rooms.roomId NOT IN (SELECT bookingdetail.rooms_roomId FROM bookingdetail) AND
-	booking.checkInDate >= '$arrival' AND
-    booking.checkOutDate <= '$departune' AND
+            $sql = "select distinct booking.checkInDate , booking.checkOutDate , rooms.roomId from booking
+inner join bookingdetail on bookingdetail.booking_bookingId = booking.bookingId
+inner join rooms on bookingdetail.rooms_roomId != rooms.roomId
+where rooms.roomId not in (select bookingdetail.rooms_roomId from bookingdetail) and
+	booking.checkInDate between '$arrival' and '$departune' and
     rooms.types_typeId = $typeId";
             $result = $conn->query($sql);
             $roomId = null;
@@ -41,18 +40,6 @@ WHERE rooms.roomId NOT IN (SELECT bookingdetail.rooms_roomId FROM bookingdetail)
             return $roomId;
         }
 
-        public static function getNoVacancies($typeId){
-            require("connection_connect.php");
-            $sql = "SELECT DATE(booking.checkInDate) , DATE(booking.checkOutDate) , 
-COUNT(rooms.roomId)
-FROM booking
-INNER JOIN bookingdetail ON bookingdetail.booking_bookingId = booking.bookingId
-INNER JOIN rooms ON bookingdetail.rooms_roomId = rooms.roomId
-WHERE rooms.types_typeId = 2
-GROUP BY DATE(booking.checkInDate)";
-            $result = $conn->query($sql);
-            while($my_row = $result->fetch_assoc()){
-            }
-        }
+        
     }
 ?>

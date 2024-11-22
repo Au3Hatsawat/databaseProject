@@ -1,8 +1,8 @@
 <?php
     $servername = "localhost";
-    $username = "db24_100";
-    $password = "db24_100";
-    $dbname = "db24_100_g09";
+    $username = "";
+    $password = "";
+    $dbname = "";
     $conn = new mysqli($servername,$username,$password);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
